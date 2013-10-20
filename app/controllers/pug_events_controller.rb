@@ -18,6 +18,7 @@ class PugEventsController < ApplicationController
       pug["end"] = event['date'] + " " + end_time
       pug["title"] = event['name']
       pug["description"] = event['tweet_text']
+      pug["url"] = "http://www.pugwarriors.com/games/" + event['_id']
       pug['allDay'] = false
       @pug_events.push(pug)
     end
