@@ -10,9 +10,15 @@ set :scm, "git"
 set :repository, "https://github.com/railsrumble/r13-team-388"
 set :branch, "master"
 
+require "bundler/capistrano"
+set :bundle_flags, "--deployment --quiet --binstubs"
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
@@ -33,7 +39,8 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
 
   task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.example.yml #{release_path}/config/database.yml"
+    run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    #run "ln -nfs #{shared_path}/config/database.example.yml #{release_path}/config/database.yml"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
