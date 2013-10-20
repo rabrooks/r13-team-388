@@ -6,17 +6,17 @@
 
   <p>
     <%= f.label :start %><br>
-    <%= f.date_field :start %>
+    <%= f.datetime_field :start %>
   </p>
 
   <p>
     <%= f.label :end %><br>
-    <%= f.date_field :end %>
+    <%= f.datetime_field :end %>
   </p>
 
   <p>
-    <%= f.label :ongoing %><br>
-    <%= f.check_box :ongoing %>
+    <%= f.label :allDay %><br>
+    <%= f.check_box :allDay, {}, "true", "false" %>
   </p>
 
    <p>
@@ -29,6 +29,11 @@
     <%= f.text_area :description %>
   </p>
 
+   <p>
+    <%= f.label :url %><br>
+    <%= f.datetime_field :url %>
+  </p>
+
   <p>
     <%= f.label :cost %><br>
     <%= f.number_field :cost %>
@@ -38,5 +43,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<%= link_to 'Back', events_path %>

@@ -5,9 +5,11 @@ class CreateEvents < ActiveRecord::Migration
       t.text :title
       t.datetime :start
       t.datetime :end
-      t.boolean :ongoing
+      t.boolean :allDay
+      t.text :url
       t.text :display_location
       t.text :description
+      t.text :className
       t.decimal :cost
 
       t.timestamps

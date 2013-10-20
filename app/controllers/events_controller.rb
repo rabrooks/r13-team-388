@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
 
   def index
-
+    @event = Event.all
   end
 
   def create
   @event = Event.new(event_params)
-
-  if @event.save
-    redirect_to @event
-  else
-    render 'new'
+    if @event.save
+      redirect_to @event
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.new(event_params)
+
   end
 
   def update
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :start
+      params.require(:event).permit(:title, :start,
       :end, :ongoing, :display_loaction, :description, :cost )
     end
 
