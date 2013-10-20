@@ -41,8 +41,10 @@ harvested until...
   2.0.0-p247
 
 ## System dependencies
-  Postgresql and PG gem
-  Jquery
+ [![OpenShift](http://upload.wikimedia.org/wikipedia/en/3/3a/OpenShift-LogoType.svg)](http://openshift.com/)
+ [![PostGIS](http://www.ahwebdev.fr/wp-content/uploads/2012/12/Logo_square_postgis.png)](http://postgis.org/)
+ [![PostgreSQL](http://www.vitavoom.com/static/images/postgresql_logo.png)](http://postgresql.org/)
+ [![jQuery](http://upload.wikimedia.org/wikipedia/en/7/72/JQuery_UI_Logo.svg)](http://jquery.org/)
 
 ## Configuration
 
