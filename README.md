@@ -17,7 +17,7 @@ we're going to have some free time or we find ourselves with free time now.
 What do we do? Do we read entire newspapers and collate event chronologies
 in our minds? Visit several web sites and local forums which are pursuant
 to your many and varied interests looking for what to do that might match
-up with your schedule.
+up with your requirements.
 
 [![Date and time](https://raw.github.com/derekm/unt1l/master/unt1l.png)](https://raw.github.com/derekm/unt1l/master/unt1l.png)
 
