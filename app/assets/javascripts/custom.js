@@ -52,10 +52,8 @@ $(document).ready(function() {
         },
 
         eventClick: function(event) {
-          if (event.id) {
-            var pageid= event.id,
-            pageurl = 'http://until.r13.railsrumble.com//events/' . pageid;
-            window.open(pageurl);
+          if (event.url) {
+            window.open(event.url);
             return false;
         }
     }
