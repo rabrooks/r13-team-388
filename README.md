@@ -27,6 +27,16 @@ of local events that suit me.
 
 [![Until now or until then](https://raw.github.com/derekm/unt1l/master/unt1l_2.png)](https://raw.github.com/derekm/unt1l/master/unt1l_2.png)
 
+There should be as few barriers as possible to event entry and event
+acquisition, the system should even go so far as to harvest events from
+remote sources by APIs, screen scraping, natural language processing, and
+regular expression or grammars. We should take advantage of our competition,
+as in the case with [R13 Team 346](https://github.com/railsrumble/r13-team-346)
+aka [PugWarriors.com](http://pugwarriors.com/). Their events will happily be
+harvested until...
+
+[![Events from many sources for passersby](https://raw.github.com/derekm/unt1l/master/event-details.png)](https://raw.github.com/derekm/unt1l/master/event-details.png)
+
 ## Ruby version
   2.0.0-p247
 
