@@ -21,9 +21,9 @@ var defaults = {
 	defaultView: 'month',
 	aspectRatio: 1.35,
 	header: {
-		left: 'today prev,next',
-		center: 'title',
-		right: 'month,agendaDay'
+		left: 'title',
+		center: '',
+		right: 'today prev,next'
 	},
 	weekends: true,
 	weekNumbers: false,
@@ -2810,6 +2810,7 @@ function AgendaView(element, calendar, viewName) {
 	t.reportDayClick = reportDayClick; // selection mousedown hack
 	t.dragStart = dragStart;
 	t.dragStop = dragStop;
+	t.nowAnimationInt = null;
 
 
 	// imports
@@ -2894,6 +2895,8 @@ function AgendaView(element, calendar, viewName) {
 
 		if (!dayTable) { // first time rendering?
 			buildSkeleton(); // builds day table, slot area, events containers
+			animateNowMarker();
+			setNowMarkerByTime();
 		}
 		else {
 			buildDayTable(); // rebuilds day table
@@ -2922,6 +2925,27 @@ function AgendaView(element, calendar, viewName) {
 		snapMinutes = opt('snapMinutes') || opt('slotMinutes');
 	}
 
+	// fullcalendar uses 48 20px half-hour rows in its agenda view
+	// with border 1px 0px 0px that comes out to 1008px, being the
+	// timescale we have on which to represent a position for "now"
+	//
+	// 0.7 is the factor of pixels in the agendaDay view (1008) to
+	// seconds in a day (1440), 0.7 pixels for every minute that's
+	// past
+	function setNowMarkerByTime() {
+		var nowDiv = document.getElementById('fc-agenda-now');
+		var today = new Date();
+		var hrs = today.getHours();
+		var min = today.getMinutes();
+		var rows = (maxMinute - minMinute) / opt('slotMinutes');
+		var factor = rows * $('.fc-slot1').height() / 1440;
+		nowDiv.style.top = Math.floor(factor * (hrs*60 + min))+"px";
+	}
+
+	function animateNowMarker() {
+		t.nowAnimationInt = window.setInterval(setNowMarkerByTime,
+		                                       60000);
+	}
 
 
 	/* Build DOM
@@ -2984,6 +3008,11 @@ function AgendaView(element, calendar, viewName) {
 		slotContainer =
 			$("<div style='position:relative;width:100%;overflow:hidden'/>")
 				.appendTo(slotScroller);
+
+		// add h-rule minute now marker
+		slotNowMarker =
+			$("<div id='fc-agenda-now' style='position:absolute;left:0px;width:100%;top:0px;height:0px;border-top:2px solid rgb(255,127,110);overflow:hidden;z-index:9'/>")
+				.appendTo(slotContainer);
 
 		slotSegmentContainer =
 			$("<div class='fc-event-container' style='position:absolute;z-index:8;top:0;left:0'/>")
