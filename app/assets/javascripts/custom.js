@@ -13,6 +13,11 @@ $(document).ready(function() {
             url: '/events/index.json', // use the `url` property
             color: 'blue',    // an option!
             textColor: 'white'  // an option!
+        },
+        {
+            url: '/pug_events/index.json', // use the `url` property
+            color: 'blue',    // an option!
+            textColor: 'white'  // an option!
         }
         // any other sources...
         ],

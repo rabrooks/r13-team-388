@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  foreign_id: MyText
+  date: 2013-10-20
+  time: 2013-10-20 13:53:53
+  title: MyText
+  location: MyText
+  location_city: MyText
+  location_state: MyText
+  location_zip: MyText
+  location_coordinates: MyText
+  description: MyText
+
+two:
+  id: 
+  foreign_id: MyText
+  date: 2013-10-20
+  time: 2013-10-20 13:53:53
+  title: MyText
+  location: MyText
+  location_city: MyText
+  location_state: MyText
+  location_zip: MyText
+  location_coordinates: MyText
+  description: MyText

@@ -1,0 +1,2 @@
+module PugEventsHelper
+end
