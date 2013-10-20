@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 
+  category_id: 
+  title: 
+  start: 
+  duration: 
+  ongoing: 
+  display_location: 
+  description: 
+  cost: 
+
+two:
+  event_id: 
+  category_id: 
+  title: 
+  start: 
+  duration: 
+  ongoing: 
+  display_location: 
+  description: 
+  cost: 
