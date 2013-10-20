@@ -1,1 +1,1 @@
-json.array! @event, :tite, :description
+json.array! @event, :title, :description, :start
