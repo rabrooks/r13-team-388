@@ -49,7 +49,16 @@ $(document).ready(function() {
                      +"allDay:\t" + allDay + "\n\n"
                      +"Jump to 3rd frame of mockup here.");
             }
+        },
+
+        eventClick: function(event) {
+          if (event.id) {
+            var pageid= event.id,
+            pageurl = 'http://until.r13.railsrumble.com//events/' . pageid;
+            window.open(pageurl);
+            return false;
         }
+    }
     });
 
 });
