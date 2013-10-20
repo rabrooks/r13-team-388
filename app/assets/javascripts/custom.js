@@ -24,7 +24,7 @@ $(document).ready(function() {
         header: {
             left: 'prev',
             center: 'title',
-            right: 'today next'
+            right: 'month today next'
         },
         columnFormat: {
             day: "'Click for start time or drag for time range'"
