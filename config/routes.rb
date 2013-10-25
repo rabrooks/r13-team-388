@@ -1,5 +1,6 @@
 Until::Application.routes.draw do
-  root "welcome#index"
+  root "static_pages#index"
+
   get "events/index"
   resources :events
   get "pug_events/index"
